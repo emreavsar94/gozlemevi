@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+    
+    <linearGradient id="planetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="40%" stop-color="#4facfe"/>
+      <stop offset="100%" stop-color="#0b132b"/>
+    </linearGradient>
+
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="50%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <clipPath id="ring-back-clip">
+      <rect x="-100" y="-100" width="712" height="356" transform="rotate(-15 256 256)" />
+    </clipPath>
+    <clipPath id="ring-front-clip">
+      <rect x="-100" y="256" width="712" height="356" transform="rotate(-15 256 256)" />
+    </clipPath>
+  </defs>
+
+  <circle cx="256" cy="256" r="180" fill="url(#centerGlow)"/>
+
+  <circle cx="256" cy="256" r="160" fill="none" stroke="#334155" stroke-width="3" opacity="0.4"/>
+  <circle cx="256" cy="256" r="160" fill="none" stroke="#6366f1" stroke-width="4" stroke-dasharray="15 35" opacity="0.6"/>
+
+  <g clip-path="url(#ring-back-clip)">
+    <ellipse cx="256" cy="256" rx="180" ry="48" fill="none" stroke="url(#ringGrad)" stroke-width="22" transform="rotate(-15 256 256)" filter="drop-shadow(0 0 6px rgba(245,158,11,0.3))"/>
+  </g>
+
+  <circle cx="256" cy="256" r="90" fill="url(#planetGrad)" filter="drop-shadow(0 0 25px rgba(79,70,229,0.35))"/>
+  
+  <path d="M 256,166 A 90,90 0 0,1 256,346 A 35,90 0 0,1 256,166 Z" fill="#030712" opacity="0.6"/>
+
+  <g clip-path="url(#ring-front-clip)">
+    <ellipse cx="256" cy="256" rx="180" ry="48" fill="none" stroke="url(#ringGrad)" stroke-width="22" transform="rotate(-15 256 256)" filter="drop-shadow(0 0 10px rgba(245,158,11,0.5))"/>
+  </g>
+
+  <path d="M 256,40 L 256,60 M 256,452 L 256,472 M 40,256 L 60,256 M 462,256 L 482,256" stroke="#6366f1" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  
+  <path d="M 320,170 L 320,195 M 310,182 L 330,182" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+  <circle cx="320" cy="182" r="3.5" fill="#ffffff" filter="drop-shadow(0 0 4px #ffffff)"/>
+</svg>
